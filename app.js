@@ -1,15 +1,17 @@
 const express = require("express")
 const app = express()
+const cors = require('cors')
 
 // const records = require('./data.js')
 app.use(express.json())
+app.use(cors())
 
 // Record routes
 const recordsController = require("./controllers/recordsController.js")
 app.use("/records", recordsController)
 
 // users routes
-const userController = requre("./controllers/usersController.js")
+const userController = require("./controllers/usersController.js")
 app.use('/users', userController)
 
 // Default routes
